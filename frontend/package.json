@@ -1,0 +1,21 @@
+{
+  "name": "k121-frontend",
+  "version": "0.0.1",
+  "description": "Package do frontend do projeto k121.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/brlebtag/k121.git"
+  },
+  "keywords": [
+    "k121"
+  ],
+  "author": "Bruno G. A. Lebtag <brlebtag@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brlebtag/k121/issues"
+  },
+  "homepage": "https://github.com/brlebtag/k121#readme"
+}
