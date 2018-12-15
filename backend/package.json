@@ -18,5 +18,12 @@
   "bugs": {
     "url": "https://github.com/brlebtag/k121/issues"
   },
-  "homepage": "https://github.com/brlebtag/k121#readme"
+  "homepage": "https://github.com/brlebtag/k121#readme",
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "dependencies": {
+    "mongoose": "^5.4.0"
+  }
 }
