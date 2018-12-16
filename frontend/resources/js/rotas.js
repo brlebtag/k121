@@ -3,23 +3,27 @@ window.app.config(function($stateProvider, $urlRouterProvider, $locationProvider
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
-        .state('home', {
+        .state({
+            name: 'home',
             url: '/',
             templateUrl: 'listagem.html',
             controller: 'listagemListaController',
         })
-        .state('cadastrar', {
+        .state({
+            name: 'cadastrar',
             url: '/cadastrar',
             templateUrl: 'form.html',
             controller: 'criarListaController',
         })
-        .state('editar', {
-            url: '/editar/{id}',
+        .state({
+            name: 'editar', 
+            url: '/editar/{uuid}',
             templateUrl: 'form.html',
             controller: 'editarListaController',
         })
-        .state('lista_gerada', {
-            url: '/gerado',
+        .state({
+            name: 'lista_gerada',
+            url: '/gerado/{uuid}',
             templateUrl: 'gerado.html',
             controller: 'gerarListaController',
         });

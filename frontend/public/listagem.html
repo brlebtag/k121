@@ -6,7 +6,7 @@
     </nav>
 
     <div class="text-right m-3">
-        <a href="/cadastrar" class="btn btn-primary">
+        <a ui-sref="cadastrar" class="btn btn-primary">
             <i class="fas fa-plus-square"></i> Nova lista
         </a>
     </div>
@@ -19,13 +19,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Lista de amigos</td>
+            <tr ng-repeat="lista in listas">
+                <th scope="row">{{ $index + 1 }}</th>
+                <td>{{ lista.titulo }}</td>
                 <td>
-                    <a href="/editar/1" title="Editar lista"><i class="fas fa-edit"></i></a>
+                    <a ui-sref="editar({uuid: lista.uuid})" title="Editar lista"><i class="fas fa-edit"></i></a>
                     <a href="#" title="Excluir lista"><i class="fas fa-trash-alt"></i></a>
-                    <a href="/gerado" title="Gerar lista"><i class="fas fa-file-invoice"></i></a>
+                    <a ui-sref="lista_gerada({uuid: lista.uuid})" title="Gerar lista"><i class="fas fa-file-invoice"></i></a>
                 </td>
             </tr>
         </tbody>

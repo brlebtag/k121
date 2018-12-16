@@ -1555,10 +1555,23 @@ eval("module.exports = function(module) {\n\tif (!module.webpackPolyfill) {\n\t\
 /*!**********************************************!*\
   !*** ./resources/js/criarListaController.js ***!
   \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("window.app.controller('criarListaController', ['$scope', function ($scope) {\n  $scope.titulo = 'Criar lista';\n}]);\n\n//# sourceURL=webpack:///./resources/js/criarListaController.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _crudHelper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./crudHelper.js */ \"./resources/js/crudHelper.js\");\n\nwindow.app.controller('criarListaController', ['$scope', '$http', function ($scope, $http) {\n  $scope.titulo = 'Criar lista';\n  Object(_crudHelper_js__WEBPACK_IMPORTED_MODULE_0__[\"criarRemoverEventos\"])($scope);\n  $scope.amigos = [{\n    nome: 'Bruno',\n    email: 'brlebtag@gmail.com'\n  }];\n\n  $scope.salvar = function ($event) {\n    Object(_crudHelper_js__WEBPACK_IMPORTED_MODULE_0__[\"pararEvento\"])($event);\n  };\n}]);\n\n//# sourceURL=webpack:///./resources/js/criarListaController.js?");
+
+/***/ }),
+
+/***/ "./resources/js/crudHelper.js":
+/*!************************************!*\
+  !*** ./resources/js/crudHelper.js ***!
+  \************************************/
+/*! exports provided: pararEvento, criarRemoverEventos */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"pararEvento\", function() { return pararEvento; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"criarRemoverEventos\", function() { return criarRemoverEventos; });\nfunction pararEvento($event) {\n  $event.preventDefault();\n  $event.stopPropagation();\n}\nfunction criarRemoverEventos($scope) {\n  $scope.novoAmigo = function ($event) {\n    pararEvento($event);\n    $scope.amigos.push({\n      nome: '',\n      email: ''\n    });\n  };\n\n  $scope.removerAmigo = function ($event, index) {\n    pararEvento($event);\n    $scope.amigos.splice(index, 1);\n  };\n}\n\n//# sourceURL=webpack:///./resources/js/crudHelper.js?");
 
 /***/ }),
 
@@ -1566,21 +1579,23 @@ eval("window.app.controller('criarListaController', ['$scope', function ($scope)
 /*!***********************************************!*\
   !*** ./resources/js/editarListaController.js ***!
   \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("window.app.controller('editarListaController', ['$scope', function ($scope) {\n  $scope.titulo = 'Editar lista';\n}]);\n\n//# sourceURL=webpack:///./resources/js/editarListaController.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _crudHelper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./crudHelper.js */ \"./resources/js/crudHelper.js\");\n\nwindow.app.controller('editarListaController', ['$scope', '$stateParams', '$http', function ($scope, $stateParams, $http) {\n  $scope.titulo = 'Editar lista';\n  Object(_crudHelper_js__WEBPACK_IMPORTED_MODULE_0__[\"criarRemoverEventos\"])($scope);\n\n  $scope.salvar = function ($event) {\n    Object(_crudHelper_js__WEBPACK_IMPORTED_MODULE_0__[\"pararEvento\"])($event);\n  };\n}]);\n\n//# sourceURL=webpack:///./resources/js/editarListaController.js?");
 
 /***/ }),
 
-/***/ "./resources/js/gerarListaController.js":
-/*!**********************************************!*\
-  !*** ./resources/js/gerarListaController.js ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./resources/js/geradoListaController.js":
+/*!***********************************************!*\
+  !*** ./resources/js/geradoListaController.js ***!
+  \***********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("window.app.controller('gerarListaController', ['$scope', function ($scope) {\n  $scope.greeting = 'Gerar!';\n}]);\n\n//# sourceURL=webpack:///./resources/js/gerarListaController.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _crudHelper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./crudHelper.js */ \"./resources/js/crudHelper.js\");\n\nwindow.app.controller('gerarListaController', ['$scope', '$stateParams', '$http', function ($scope, $stateParams, $http) {\n  $scope.enviar = function ($event, uuid) {\n    Object(_crudHelper_js__WEBPACK_IMPORTED_MODULE_0__[\"pararEvento\"])($event);\n  };\n\n  $scope.enviarParaTodos = function ($event) {\n    Object(_crudHelper_js__WEBPACK_IMPORTED_MODULE_0__[\"pararEvento\"])($event);\n  };\n\n  $scope.amigos = [{\n    uuid: 'a3d78d77-8633-4151-8b39-cf45ce0b0a6f',\n    nome: 'João',\n    amigo: 'Maria'\n  }];\n}]);\n\n//# sourceURL=webpack:///./resources/js/geradoListaController.js?");
 
 /***/ }),
 
@@ -1591,7 +1606,7 @@ eval("window.app.controller('gerarListaController', ['$scope', function ($scope)
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("window._ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\nwindow.Popper = __webpack_require__(/*! popper.js */ \"./node_modules/popper.js/dist/esm/popper.js\").default;\n\ntry {\n  window.$ = window.jQuery = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n\n  __webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\n} catch (e) {}\n\nwindow.axios = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\nwindow.angular = __webpack_require__(/*! angular */ \"./node_modules/angular/index.js\");\nwindow['ui.router'] = __webpack_require__(/*! @uirouter/angularjs */ \"./node_modules/@uirouter/angularjs/lib-esm/index.js\");\nwindow.app = window.angular.module('amigoSecretoApp', ['ui.router']);\n\n__webpack_require__(/*! ./rotas.js */ \"./resources/js/rotas.js\");\n\n__webpack_require__(/*! ./listagemListaController.js */ \"./resources/js/listagemListaController.js\");\n\n__webpack_require__(/*! ./criarListaController.js */ \"./resources/js/criarListaController.js\");\n\n__webpack_require__(/*! ./editarListaController.js */ \"./resources/js/editarListaController.js\");\n\n__webpack_require__(/*! ./gerarListaController.js */ \"./resources/js/gerarListaController.js\");\n\n//# sourceURL=webpack:///./resources/js/index.js?");
+eval("window._ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\nwindow.Popper = __webpack_require__(/*! popper.js */ \"./node_modules/popper.js/dist/esm/popper.js\").default;\n\ntry {\n  window.$ = window.jQuery = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n\n  __webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\n} catch (e) {}\n\nwindow.axios = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\nwindow.angular = __webpack_require__(/*! angular */ \"./node_modules/angular/index.js\");\nwindow['ui.router'] = __webpack_require__(/*! @uirouter/angularjs */ \"./node_modules/@uirouter/angularjs/lib-esm/index.js\");\nwindow.app = window.angular.module('amigoSecretoApp', ['ui.router']);\n\n__webpack_require__(/*! ./rotas.js */ \"./resources/js/rotas.js\");\n\n__webpack_require__(/*! ./listagemListaController.js */ \"./resources/js/listagemListaController.js\");\n\n__webpack_require__(/*! ./criarListaController.js */ \"./resources/js/criarListaController.js\");\n\n__webpack_require__(/*! ./editarListaController.js */ \"./resources/js/editarListaController.js\");\n\n__webpack_require__(/*! ./geradoListaController.js */ \"./resources/js/geradoListaController.js\");\n\n//# sourceURL=webpack:///./resources/js/index.js?");
 
 /***/ }),
 
@@ -1602,7 +1617,7 @@ eval("window._ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodas
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("window.app.controller('listagemListaController', ['$scope', function ($scope) {\n  $scope.greeting = 'Listagem!';\n}]);\n\n//# sourceURL=webpack:///./resources/js/listagemListaController.js?");
+eval("window.app.controller('listagemListaController', ['$scope', '$http', function ($scope, $http) {\n  $scope.listas = [{\n    uuid: '5a838133-467e-44b4-a452-ca95fbae268b',\n    titulo: 'Lista de amigos trabalho'\n  }, {\n    uuid: 'a3d78d77-8633-4151-8b39-cf45ce0b0a6f',\n    titulo: 'Lista de amigos familia'\n  }];\n}]);\n\n//# sourceURL=webpack:///./resources/js/listagemListaController.js?");
 
 /***/ }),
 
@@ -1613,7 +1628,7 @@ eval("window.app.controller('listagemListaController', ['$scope', function ($sco
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("window.app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {\n  $urlRouterProvider.otherwise('/');\n  $stateProvider.state('home', {\n    url: '/',\n    templateUrl: 'listagem.html',\n    controller: 'listagemListaController'\n  }).state('cadastrar', {\n    url: '/cadastrar',\n    templateUrl: 'form.html',\n    controller: 'criarListaController'\n  }).state('editar', {\n    url: '/editar/{id}',\n    templateUrl: 'form.html',\n    controller: 'editarListaController'\n  }).state('lista_gerada', {\n    url: '/gerado',\n    templateUrl: 'gerado.html',\n    controller: 'gerarListaController'\n  });\n  $locationProvider.html5Mode({\n    enabled: true,\n    requireBase: false\n  });\n});\n\n//# sourceURL=webpack:///./resources/js/rotas.js?");
+eval("window.app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {\n  $urlRouterProvider.otherwise('/');\n  $stateProvider.state({\n    name: 'home',\n    url: '/',\n    templateUrl: 'listagem.html',\n    controller: 'listagemListaController'\n  }).state({\n    name: 'cadastrar',\n    url: '/cadastrar',\n    templateUrl: 'form.html',\n    controller: 'criarListaController'\n  }).state({\n    name: 'editar',\n    url: '/editar/{uuid}',\n    templateUrl: 'form.html',\n    controller: 'editarListaController'\n  }).state({\n    name: 'lista_gerada',\n    url: '/gerado/{uuid}',\n    templateUrl: 'gerado.html',\n    controller: 'gerarListaController'\n  });\n  $locationProvider.html5Mode({\n    enabled: true,\n    requireBase: false\n  });\n});\n\n//# sourceURL=webpack:///./resources/js/rotas.js?");
 
 /***/ })
 

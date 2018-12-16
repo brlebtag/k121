@@ -19,4 +19,4 @@ require('./rotas.js');
 require('./listagemListaController.js');
 require('./criarListaController.js');
 require('./editarListaController.js');
-require('./gerarListaController.js');
+require('./geradoListaController.js');

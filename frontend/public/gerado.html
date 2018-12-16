@@ -20,12 +20,12 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>João</td>
-                <td>Maria</td>
+            <tr ng-repeat="amigo in amigos">
+                <th scope="row">{{ $index + 1 }}</th>
+                <td>{{ amigo.nome }}</td>
+                <td>{{ amigo.amigo }}</td>
                 <td>
-                    <a  title="Reenviar e-mail" href="#"><i class="fas fa-envelope"></i></a>
+                    <a ng-click="enviar($event, amigo.uuid)"  title="Reenviar e-mail" href="#"><i class="fas fa-envelope"></i></a>
                 </td>
             </tr>
         </tbody>
