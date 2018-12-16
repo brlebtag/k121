@@ -1,0 +1,33 @@
+.centralizar-vh {
+    @include centralizar-verticalmente-horizontalmente();
+}
+
+.titlo-sistema {
+    color: rgba(0,0,0,0.87);
+}
+
+.card-principal {
+    width: 760px;
+    padding: 5px;
+}
+
+.pagina-formulario {
+    text-align: left;
+    padding: 15px;
+}
+
+.amigo-secreto {
+    background-color: #E8E8E8;
+    padding: 10px;
+    border: 1px solid #C8C8C8;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.amigo-secreto:last-child {
+    margin-bottom: 0;
+}
+
+.remover-btn:hover {
+    color: red;
+}

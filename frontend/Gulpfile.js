@@ -1,5 +1,5 @@
 'use strict';
-
+const gulp = require('gulp');
 const { series, src, dest, parallel } = require('gulp');
 const clean = require('gulp-clean');
 const concat = require('gulp-concat');
@@ -9,6 +9,7 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const webpack = require('webpack-stream');
+const watch = require('gulp-watch');
 
 sass.compiler = require('node-sass');
 
@@ -58,8 +59,15 @@ function compilarCss() {
         .pipe(dest('./public/css'));
 }
 
-exports.default =
-    series(
-        limparCompilados,
-        parallel(compilarJs, compilarCss)
-    );
+const compilacao = series(
+    limparCompilados,
+    parallel(compilarJs, compilarCss)
+);
+
+function vigiarCompilacao() {
+    return gulp.watch(['resources/js/*.js', 'resources/scss/*.scss'], compilacao);
+}
+
+exports.default = compilacao;
+
+exports.watch = vigiarCompilacao;

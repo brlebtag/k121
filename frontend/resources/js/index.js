@@ -10,3 +10,13 @@ try {
 window.axios = require('axios');
 
 window.angular = require('angular');
+
+window['ui.router'] = require('@uirouter/angularjs');
+
+window.app = window.angular.module('amigoSecretoApp', ['ui.router']);
+
+require('./rotas.js');
+require('./listagemListaController.js');
+require('./criarListaController.js');
+require('./editarListaController.js');
+require('./gerarListaController.js');
