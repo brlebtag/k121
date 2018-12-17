@@ -21,12 +21,12 @@ const transporter = nodemailer.createTransport({
     host: "smtp.mailtrap.io",
     port: 2525,
     auth: {
-        user: "33719081279f39822",
-        pass: "415f286bfee4ea"
+        user: "",
+        pass: ""
     }
 });
 
-mongoose.connect('mongodb://localhost:27017/amigo-secreto', {
+mongoose.connect('mongodb://mongo:27017/amigo-secreto', {
     useNewUrlParser: true,
 }).catch(function (e) {
     console.log(e);
