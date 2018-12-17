@@ -1,5 +1,13 @@
+@import "./ld-spinner";
+
 .centralizar-vh {
     @include centralizar-verticalmente-horizontalmente();
+}
+
+.centralizar-conteudo {
+    max-width: 760px;
+    display: block;
+    margin: 10% auto 5%;
 }
 
 .titlo-sistema {
@@ -30,4 +38,14 @@
 
 .remover-btn:hover {
     color: red;
+}
+
+#lock {
+    background: rgba($color: #000, $alpha: 0.6);
+    @include fullscreen();
+    display: none;
+}
+
+#lock > .lds-spinner {
+    @include centralizar-verticalmente-horizontalmente();
 }

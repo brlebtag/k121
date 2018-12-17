@@ -2,15 +2,25 @@
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a ui-sref="home">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">{{ titulo }}</li>
+        <li class="breadcrumb-item active" aria-current="page">{{ modo }}</li>
     </ol>
   </nav>
-  
+  <div ng-if="notificao" class="alert alert-{{notificao.tipo}} m-3" role="alert">
+      {{ notificao.mensagem }}
+      <button ng-click="removerAlert($event)" type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
   <form name="lista-formulario">
     <div class="text-right mb-3">
         <a href="#" ng-click="novoAmigo($event)" class="btn btn-primary">
             <i class="fas fa-plus-square"></i> Novo amigo(a)
         </a>
+    </div>
+    <div class="form-group">
+      <label for="titulo">Titulo</label>
+      <input type="text" ng-model="titulo" class="form-control" id="titulo" aria-describedby="tituloHelp" placeholder="Titulo da lista">
+      <small id="tituloHelp" class="form-text text-muted">Nome da lista</small>
     </div>
     <div ng-repeat="amigo in amigos" class="amigo-secreto">
       <div class="form-group">

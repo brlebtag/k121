@@ -8,6 +8,7 @@ window.app.config(function($stateProvider, $urlRouterProvider, $locationProvider
             url: '/',
             templateUrl: 'listagem.html',
             controller: 'listagemListaController',
+            params: { sucesso: null },
         })
         .state({
             name: 'cadastrar',
